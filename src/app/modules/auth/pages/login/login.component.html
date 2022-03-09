@@ -1,0 +1,102 @@
+<div class="container-fluid h-100">
+  <div class="row h-100">
+    <div class="col d-flex justify-content-center align-items-center">
+      <div class="card__login">
+        <div>
+          <form
+            id="formLogin"
+            (ngSubmit)="login(user)"
+            autocomplete="off"
+            method="post"
+          >
+            <div class="pb-3">
+              <p>devchallenges</p>
+              <h4>Login</h4>
+            </div>
+            <div class="mb-3">
+              <input
+                [(ngModel)]="user.email"
+                type="email"
+                class="form-control"
+                id="InputEmail"
+                name="InputEmail"
+                placeholder="Email"
+              />
+            </div>
+            <div class="mb-3">
+              <input
+                [(ngModel)]="user.password"
+                type="password"
+                class="form-control"
+                id="InputPassword"
+                name="InputPassword"
+                placeholder="Password"
+              />
+            </div>
+            <div class="col-12" *ngIf="errors.length > 0">
+              <ul class="alert alert-danger">
+                <li class="ms-2" *ngFor="let err of errors">{{ err }}</li>
+              </ul>
+            </div>
+            <div class="d-grid gap-2">
+              <button type="submit" class="btn btn-primary" id="buttonLogin">
+                Login
+              </button>
+            </div>
+          </form>
+          <div
+            class="d-flex flex-column align-items-center justify-content-center pt-sm-3 pt-md-5"
+          >
+            <p>or continue with these social profile</p>
+            <div class="div__buttons row row-cols-4 g-3">
+              <div class="col">
+                <button
+                  mat-fab
+                  color="primary"
+                  aria-label="Example icon button with a delete icon"
+                >
+                  <i class="fa-brands fa-2x fa-facebook-square"></i>
+                </button>
+              </div>
+              <div class="col">
+                <button
+                  mat-fab
+                  color="primary"
+                  aria-label="Example icon button with a delete icon"
+                  title="Facebook"
+                >
+                  <i class="fa-brands fa-2x fa-facebook-square"></i>
+                </button>
+              </div>
+              <div class="col">
+                <button
+                  mat-fab
+                  color="primary"
+                  aria-label="Example icon button with a delete icon"
+                  title="Twitter"
+                >
+                  <i class="fa-brands fa-2x fa-twitter"></i>
+                </button>
+              </div>
+              <div class="col">
+                <button
+                  mat-fab
+                  color="primary"
+                  aria-label="Example icon button with a delete icon"
+                  title="Github"
+                >
+                  <i class="fa-brands fa-2x fa-github"></i>
+                </button>
+              </div>
+            </div>
+            <p>
+              Don’t have an account yet?
+              <a href="">Register</a>
+            </p>
+          </div>
+        </div>
+        <div></div>
+      </div>
+    </div>
+  </div>
+</div>

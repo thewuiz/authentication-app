@@ -1,0 +1,28 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+
+html {
+  position: relative !important;
+  height: 100vh;
+}
+
+body {
+  font-family: 'Noto Sans', sans-serif;
+  height: 100%;
+  margin-bottom: 60px !important;
+}
+
+/* Personal class */
+@media (max-width: 576px) {
+  .pt-sm-4 {
+    padding-top: 1.5rem;
+  }
+
+  .pt-sm-3 {
+    padding-top: 1rem;
+  }
+
+  .pt-sm-2 {
+    padding-top: 0.5rem;
+  }
+}
