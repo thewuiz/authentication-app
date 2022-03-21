@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { User } from 'src/app/shared/models/user';
 import { environment } from 'src/environments/environment';
 
@@ -10,6 +10,7 @@ import { environment } from 'src/environments/environment';
 export class AuthService {
   private urlEndPoint = environment.base_url;
   private _token: string = '';
+  private _userId: string = '';
 
   constructor(private http: HttpClient) {}
 
@@ -23,20 +24,28 @@ export class AuthService {
     return '';
   }
 
-  // ===============================================================================================
-  // ================================= SIGNIN USER =================================================
-  signIn(user: User): Observable<any> {
-    return this.http.post(`${this.urlEndPoint}/login`, user);
+  public get userId(): string {
+    if (this._userId !== '') {
+      return this._userId;
+    } else if (this._userId == '' && sessionStorage.getItem('userId')) {
+      this._userId = sessionStorage.getItem('userId') || '';
+      return this._userId;
+    }
+    return '';
   }
 
-  // ===============================================================================================
-  // ================================= SIGNUP USER =================================================
+  signIn(user: User): Observable<any> {
+    return this.http.post<any>(`${this.urlEndPoint}/login`, user).pipe(
+      map((response) => {
+        return response;
+      })
+    );
+  }
+
   signUp(user: User): Observable<any> {
     return this.http.post(`${this.urlEndPoint}/users/create`, user);
   }
 
-  // ===============================================================================================
-  // ================================= LOGOUT USER =================================================
   logout(): void {
     sessionStorage.removeItem('token');
     this._token = '';
@@ -60,5 +69,24 @@ export class AuthService {
   saveToken(accessToken: string): void {
     this._token = accessToken;
     sessionStorage.setItem('token', accessToken);
+  }
+
+  saveUserId(userId: string): void {
+    this._userId = userId;
+    sessionStorage.setItem('userId', userId);
+  }
+
+  // ===============================================================================================
+  // ================================= GITHUD METHODS =================================================
+  getAuthPageGithud(): Observable<any> {
+    return this.http.get(`${this.urlEndPoint}/login/github`);
+  }
+
+  loginGithud(code: string): Observable<any> {
+    return this.http.get(`${this.urlEndPoint}/login/github/${code}`).pipe(
+      map((response: any) => {
+        return response;
+      })
+    );
   }
 }

@@ -1,1 +1,28 @@
-<p>navbar works!</p>
+<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid px-5">
+    <a class="navbar-brand" href="#">devchallenges</a>
+    <div class="d-flex justify-content-end">
+      <button mat-button [matMenuTriggerFor]="beforeMenu">
+        <div class="d-flex align-items-center">
+          <img *ngIf="user.photo" [src]="user.photo" alt="" />
+          <p class="m-0 mx-2">{{ user.name || '' }}</p>
+          <i class="fa-solid fa-caret-down"></i>
+        </div>
+      </button>
+      <mat-menu #beforeMenu="matMenu" yPosition="below">
+        <button [routerLink]="['/home/user', user.uid]" mat-menu-item>
+          <i class="fa-solid fa-circle-user"></i>
+          My profile
+        </button>
+        <button mat-menu-item>
+          <i class="fa-solid fa-user-group"></i>
+          Group chat
+        </button>
+        <button (click)="logout()" mat-menu-item>
+          <i class="fa-solid fa-arrow-right-from-bracket"></i>
+          Logout
+        </button>
+      </mat-menu>
+    </div>
+  </div>
+</nav>

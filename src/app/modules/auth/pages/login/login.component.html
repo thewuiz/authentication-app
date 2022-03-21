@@ -3,12 +3,7 @@
     <div class="col d-flex justify-content-center align-items-center">
       <div class="card__login">
         <div>
-          <form
-            id="formLogin"
-            (ngSubmit)="login(user)"
-            autocomplete="off"
-            method="post"
-          >
+          <form id="formLogin" autocomplete="off" method="post">
             <div class="pb-3">
               <p>devchallenges</p>
               <h4>Login</h4>
@@ -39,7 +34,12 @@
               </ul>
             </div>
             <div class="d-grid gap-2">
-              <button type="submit" class="btn btn-primary" id="buttonLogin">
+              <button
+                (click)="login(user)"
+                type="button"
+                class="btn btn-primary"
+                id="buttonLogin"
+              >
                 Login
               </button>
             </div>
@@ -48,41 +48,12 @@
             class="d-flex flex-column align-items-center justify-content-center pt-sm-3 pt-md-5"
           >
             <p>or continue with these social profile</p>
-            <div class="div__buttons row row-cols-4 g-3">
+            <div class="div__buttons row row-cols-3 g-3">
               <div class="col">
                 <button
                   mat-fab
                   color="primary"
-                  aria-label="Example icon button with a delete icon"
-                >
-                  <i class="fa-brands fa-2x fa-facebook-square"></i>
-                </button>
-              </div>
-              <div class="col">
-                <button
-                  mat-fab
-                  color="primary"
-                  aria-label="Example icon button with a delete icon"
-                  title="Facebook"
-                >
-                  <i class="fa-brands fa-2x fa-facebook-square"></i>
-                </button>
-              </div>
-              <div class="col">
-                <button
-                  mat-fab
-                  color="primary"
-                  aria-label="Example icon button with a delete icon"
-                  title="Twitter"
-                >
-                  <i class="fa-brands fa-2x fa-twitter"></i>
-                </button>
-              </div>
-              <div class="col">
-                <button
-                  mat-fab
-                  color="primary"
-                  aria-label="Example icon button with a delete icon"
+                  (click)="GetAuthPageLogin()"
                   title="Github"
                 >
                   <i class="fa-brands fa-2x fa-github"></i>
@@ -91,7 +62,7 @@
             </div>
             <p>
               Don’t have an account yet?
-              <a href="">Register</a>
+              <a routerLink="/auth/register">Register</a>
             </p>
           </div>
         </div>

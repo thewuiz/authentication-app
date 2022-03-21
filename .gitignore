@@ -12,7 +12,7 @@
 
 #Angular environment variables 
 /src/environments/**
-
+/src/assets/img/**
 # profiling files
 chrome-profiler-events*.json
 

@@ -1,0 +1,34 @@
+img {
+  width: 32px;
+  height: 36.69px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.dropdown button {
+  border: 0;
+  background: none;
+  color: #333333;
+}
+
+.dropdown button:focus {
+  box-shadow: none;
+}
+/* Phone */
+@media (max-width: 576px) {
+  p {
+    visibility: hidden !important;
+    width: 0;
+  }
+  p + i {
+    visibility: hidden !important;
+    width: 0;
+  }
+}
+
+/* Tablets */
+@media (min-width: 577px) and (max-width: 768px) {
+  .card__user {
+    width: 80%;
+  }
+}

@@ -1,4 +1,9 @@
 export class User {
-  password: string = '';
+  uid: string = '';
+  photo: string = '';
+  name: string = '';
+  bio: string = '';
+  phone: string = '';
   email: string = '';
+  password: string = '';
 }
