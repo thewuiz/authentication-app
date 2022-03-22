@@ -1,0 +1,8 @@
+div.container {
+  height: 100vh !important;
+}
+
+.spinner-grow {
+  height: 100px;
+  width: 100px;
+}

@@ -1,0 +1,67 @@
+.back__profile {
+  width: 845.91px;
+}
+
+.back__profile a {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 25px;
+  letter-spacing: -0.035em;
+  color: #2d9cdb;
+  text-decoration: none;
+}
+
+.card__user {
+  border: 1px solid #e0e0e0;
+  box-sizing: border-box;
+  border-radius: 12px;
+  width: 845.91px;
+  overflow: hidden;
+  padding: 30px;
+}
+
+.img__profile {
+  display: block;
+  position: relative;
+}
+
+.img__profile img {
+  display: block;
+  position: relative;
+  width: 72px;
+  height: 72px;
+  border-radius: 8px;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.img__profile img + i {
+  color: #fff;
+  display: block;
+  position: absolute;
+  bottom: 40%;
+  cursor: pointer;
+  left: 35%;
+}
+
+/* Phone */
+@media (max-width: 576px) {
+  .card__user {
+    width: 100%;
+    padding: 10px;
+    border: 0;
+  }
+  .back__profile {
+    width: 100%;
+  }
+}
+
+/* Tablets */
+@media (min-width: 577px) and (max-width: 991px) {
+  .card__user {
+    width: 90%;
+  }
+  .back__profile {
+    width: 90%;
+  }
+}

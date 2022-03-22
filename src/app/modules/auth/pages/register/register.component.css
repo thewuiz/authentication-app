@@ -1,0 +1,86 @@
+.card__register {
+  border: 1px solid #bdbdbd;
+  box-sizing: border-box;
+  border-radius: 24px;
+  min-height: 544.37px;
+  width: 473.83px;
+  padding: 30px 50px;
+}
+
+.card__register form p:first-child {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.card__register form p#Join {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: -0.035em;
+  color: #333333;
+}
+
+.card__register p {
+  font-size: 14px;
+  line-height: 19px;
+  letter-spacing: -0.035em;
+  color: #828282;
+}
+
+.card__register h4 {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 25px;
+  letter-spacing: -0.035em;
+  color: #333333;
+}
+
+#InputEmail,
+#InputPassword {
+  border: 1px solid #bdbdbd;
+  box-sizing: border-box;
+  border-radius: 8px;
+  height: 48px;
+}
+
+#buttonLogin {
+  background: #2f80ed;
+  border-radius: 8px;
+}
+
+.div__buttons {
+  padding: 2em;
+}
+
+.div__buttons div.col {
+  margin: 0;
+}
+
+.div__buttons button {
+  border: 1px solid #828282;
+  box-sizing: border-box;
+  background: transparent;
+  box-shadow: none;
+  color: #828282;
+}
+
+/* Phone */
+@media (max-width: 576px) {
+  .card__register {
+    width: 100%;
+    padding: 10px;
+    border: 0;
+  }
+  .div__buttons {
+    padding: 1em;
+  }
+}
+
+/* Tablets */
+@media (min-width: 577px) and (max-width: 768px) {
+  .card__register {
+    width: 80%;
+  }
+}
+
+/* Class of bootstrap */

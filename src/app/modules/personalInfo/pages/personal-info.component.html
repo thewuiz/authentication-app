@@ -1,0 +1,88 @@
+<div class="container-fluid h-100 pt-5 mt-2">
+  <div class="row h-100">
+    <div
+      class="col d-flex flex-column justify-content-center align-items-center"
+    >
+      <div class="">
+        <div class="col d-flex justify-content-center">
+          <h1>Personal info</h1>
+        </div>
+        <p>Basic info, like your name and photo</p>
+      </div>
+      <div class="card__user">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item p-4">
+            <div class="row">
+              <div
+                class="col-6 col-md-10 d-md-flex flex-md-column align-content-md-center"
+              >
+                <h5>Profile</h5>
+                <p>Some info may be visible to other people</p>
+              </div>
+              <div
+                class="col-6 col-md-2 d-flex align-items-center justify-content-end"
+              >
+                <button [routerLink]="['/home/edit', user.uid]" type="button">
+                  Edit
+                </button>
+              </div>
+            </div>
+          </li>
+          <li class="list-group-item">
+            <div class="row">
+              <div class="col-3 d-flex align-items-center"><p>PHOTO</p></div>
+              <div class="col-9 text-end text-md-start">
+                <img
+                  *ngIf="user.photo"
+                  [src]="user.photo"
+                  [alt]="user.name"
+                  [title]="user.name"
+                />
+              </div>
+            </div>
+          </li>
+          <li class="list-group-item">
+            <div class="row">
+              <div class="col-3 d-flex align-items-center"><p>NAME</p></div>
+              <div class="col-9 text-end text-md-start">
+                <h6>{{ user.name }}</h6>
+              </div>
+            </div>
+          </li>
+          <li class="list-group-item">
+            <div class="row">
+              <div class="col-3 d-flex align-items-center"><p>BIO</p></div>
+              <div class="col-9 text-end text-md-start text-end text-md-start">
+                <h6>{{ user.bio }}</h6>
+              </div>
+            </div>
+          </li>
+          <li class="list-group-item">
+            <div class="row">
+              <div class="col-3 d-flex align-items-center"><p>PHONE</p></div>
+              <div class="col-9 text-end text-md-start">
+                <h6>{{ user.phone }}</h6>
+              </div>
+            </div>
+          </li>
+          <li class="list-group-item">
+            <div class="row">
+              <div class="col-3 d-flex align-items-center"><p>EMAIL</p></div>
+              <div class="col-9 text-end text-md-start">
+                <h6>{{ user.email }}</h6>
+              </div>
+            </div>
+          </li>
+          <li class="list-group-item">
+            <div class="row">
+              <div class="col-3 d-flex align-items-center"><p>PASSWORD</p></div>
+              <div class="col-9 text-end text-md-start">
+                <h6>********</h6>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

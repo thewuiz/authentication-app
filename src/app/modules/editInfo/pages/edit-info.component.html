@@ -1,0 +1,97 @@
+<app-modal-image></app-modal-image>
+
+<div class="container-fluid h-100 pt-5 mt-5">
+  <div class="row h-100">
+    <div
+      class="col d-flex flex-column justify-content-center align-items-center"
+    >
+      <div class="back__profile">
+        <a [routerLink]="['/home/user', user.uid]">&lt; Back</a>
+      </div>
+      <div class="card__user">
+        <div>
+          <h2>Change Info</h2>
+          <p>Changes will be reflected to every services</p>
+        </div>
+        <div class="d-flex align-items-center justify-content-start">
+          <div (click)="openModal()" class="img__profile">
+            <img [src]="user.photo" [alt]="user.name" />
+            <i class="fa-solid fa-camera"></i>
+          </div>
+          <p class="ps-4 m-0">CHANGE PHOTO</p>
+        </div>
+        <div class="mb-3">
+          <label for="input_name" class="form-label">
+            Name
+          </label>
+          <input
+            [(ngModel)]="user.name"
+            type="text"
+            class="form-control"
+            id="input_name"
+            placeholder="YOUR USER NAME"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="input_bio" class="form-label">
+            Example textarea
+          </label>
+          <textarea
+            [(ngModel)]="user.bio"
+            class="form-control"
+            id="input_bio"
+            rows="3"
+          ></textarea>
+        </div>
+
+        <div class="mb-3">
+          <label for="input_phone" class="form-label">
+            Phone
+          </label>
+          <input
+            [(ngModel)]="user.phone"
+            type="tel"
+            class="form-control"
+            id="input_phone"
+            placeholder="Enter your phone..."
+            maxlength="10"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="input_email" class="form-label">
+            Email
+          </label>
+          <input
+            [(ngModel)]="user.email"
+            type="email"
+            class="form-control"
+            id="input_email"
+            placeholder="name@example.com"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="input_password" class="form-label">
+            Password
+          </label>
+          <input
+            [(ngModel)]="user.password"
+            type="password"
+            class="form-control"
+            id="input_password"
+            placeholder="Enter your new password..."
+          />
+        </div>
+        <div class="col-12" *ngIf="errors.length > 0">
+          <ul class="alert alert-danger">
+            <li class="ms-2" *ngFor="let err of errors">{{ err }}</li>
+          </ul>
+        </div>
+        <div>
+          <button (click)="updateUser()" class="btn btn-primary" type="button">
+            Save
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

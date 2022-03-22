@@ -1,0 +1,77 @@
+<div class="container-fluid h-100">
+  <div class="row h-100">
+    <div class="col d-flex justify-content-center align-items-center">
+      <div class="card__register">
+        <div>
+          <form id="formRegister" autocomplete="off" method="post">
+            <div class="pb-3">
+              <p>devchallenges</p>
+              <h4>Join thousands of learners from around the world</h4>
+              <p id="Join">
+                Master web development by making real-life projects. There are
+                multiple paths for you to choose
+              </p>
+            </div>
+            <div class="mb-3">
+              <input
+                [(ngModel)]="user.email"
+                type="email"
+                class="form-control"
+                id="InputEmail"
+                name="InputEmail"
+                placeholder="Email"
+              />
+            </div>
+            <div class="mb-3">
+              <input
+                [(ngModel)]="user.password"
+                type="password"
+                class="form-control"
+                id="InputPassword"
+                name="InputPassword"
+                placeholder="Password"
+              />
+            </div>
+            <div class="col-12" *ngIf="errors.length > 0">
+              <ul class="alert alert-danger">
+                <li class="ms-2" *ngFor="let err of errors">{{ err }}</li>
+              </ul>
+            </div>
+            <div class="d-grid gap-2">
+              <button
+                (click)="register(user)"
+                type="button"
+                class="btn btn-primary"
+                id="buttonLogin"
+              >
+                Start coding now
+              </button>
+            </div>
+          </form>
+          <div
+            class="d-flex flex-column align-items-center justify-content-center pt-sm-3 pt-md-5"
+          >
+            <p>or continue with these social profile</p>
+            <div class="div__buttons row row-cols-3 g-3">
+              <div class="col">
+                <button
+                  mat-fab
+                  color="primary"
+                  (click)="GetAuthPageLogin()"
+                  title="Github"
+                >
+                  <i class="fa-brands fa-2x fa-github"></i>
+                </button>
+              </div>
+            </div>
+            <p>
+              Adready a member?
+              <a routerLink="/auth/login">Login</a>
+            </p>
+          </div>
+        </div>
+        <div></div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,83 @@
+div h1 {
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 49px;
+  letter-spacing: -0.035em;
+  color: #000000;
+}
+div p {
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 25px;
+  letter-spacing: -0.035em;
+  color: #000000;
+}
+
+.card__user {
+  border: 1px solid #e0e0e0;
+  box-sizing: border-box;
+  border-radius: 12px;
+  width: 845.91px;
+  overflow: hidden;
+}
+
+ul li p {
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 18px;
+  letter-spacing: -0.035em;
+  color: #bdbdbd;
+}
+
+ul li:first-child p {
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 18px;
+  color: #828282;
+}
+
+ul li:first-child button {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+  color: #828282;
+  background: none;
+  width: 95.34px;
+  height: 38px;
+  border: 1px solid #828282;
+  box-sizing: border-box;
+  border-radius: 12px;
+}
+
+ul img {
+  width: 72px;
+  height: 72px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+ul li h6 {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 25px;
+  color: #333333;
+}
+
+/* Phone */
+@media (max-width: 576px) {
+  .card__user {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+}
+
+/* Tablets */
+@media (min-width: 577px) and (max-width: 991px) {
+  .card__user {
+    width: 90%;
+  }
+}
